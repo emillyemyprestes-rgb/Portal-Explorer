@@ -1,0 +1,117 @@
+
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>Login | IPASGO Saúde</title>
+
+  <!-- CSS atualizado -->
+  <link
+    rel="stylesheet"
+    href="/assets/css/style.css?v=6"
+  >
+</head>
+
+<body>
+
+  <main class="login-wrap">
+
+    <form class="login-card" id="form">
+
+      <!-- LOGOMARCA IPASGO SAÚDE -->
+      <div class="login-brand">
+        <img
+          src="/assets/img/logo-ipasgo.png"
+          alt="IPASGO Saúde"
+          class="login-logo"
+        >
+      </div>
+
+      <!-- CABEÇALHO -->
+      <div class="login-heading">
+
+        <span class="login-eyebrow">
+          PORTAL DE GESTÃO
+        </span>
+
+        <h1>Bem-vindo!</h1>
+
+        <p class="muted">
+          Central de Comunicação e Gestão Operacional
+        </p>
+
+      </div>
+
+      <!-- CAMPOS DE ACESSO -->
+      <div class="login-fields">
+
+        <label for="login">
+          Usuário ou matrícula
+        </label>
+
+        <input
+          id="login"
+          name="login"
+          type="text"
+          placeholder="Digite seu usuário ou matrícula"
+          autocomplete="username"
+          required
+        >
+
+        <label for="senha">
+          Senha
+        </label>
+
+        <input
+          id="senha"
+          name="senha"
+          type="password"
+          placeholder="Digite sua senha"
+          autocomplete="current-password"
+          required
+        >
+
+      </div>
+
+      <!-- BOTÃO DE ENTRADA -->
+      <button
+        type="submit"
+        class="login-submit"
+      >
+        Entrar no Portal
+      </button>
+
+      <!-- MENSAGENS DE ERRO -->
+      <p
+        id="erro"
+        class="error"
+        role="alert"
+      ></p>
+
+      <!-- RODAPÉ -->
+      <div class="login-footer">
+
+        <strong>IPASGO Saúde</strong>
+
+        <small>
+          Acesso restrito a usuários autorizados
+        </small>
+
+      </div>
+
+    </form>
+
+  </main>
+
+  <!-- AUTENTICAÇÃO EXISTENTE -->
+  <script src="/assets/js/login.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+/backend/.venv/
+/backend/.env
+
+/portal_explorer/backend/.env
+/portal_explorer/backend/.venv/
+__pycache__/
+*.pyc

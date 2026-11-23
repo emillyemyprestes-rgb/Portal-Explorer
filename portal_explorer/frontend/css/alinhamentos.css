@@ -1,0 +1,406 @@
+
+/* PORTAL IPASGO SAÚDE — ALINHAMENTOS */
+
+[hidden] {
+  display: none !important;
+}
+
+body {
+  margin: 0;
+  background: #f4f8f5;
+  color: #18392b;
+  font-family: Arial, sans-serif;
+}
+
+.shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  flex-shrink: 0;
+  background: #006b3f;
+  color: white;
+  padding: 24px 16px;
+  box-sizing: border-box;
+}
+
+.sidebar-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.sidebar-logo {
+  width: 100%;
+  max-height: 100px;
+  object-fit: contain;
+  background: white;
+  border-radius: 12px;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar nav a {
+  color: white;
+  text-decoration: none;
+  padding: 13px 16px;
+  border-radius: 8px;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  background: #009b62;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+  padding: 32px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.top h1 {
+  margin: 6px 0;
+  color: #004d30;
+}
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #009b62;
+}
+
+.subtitle,
+.muted {
+  color: #667d72;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.card,
+.panel {
+  background: white;
+  border: 1px solid #d7e7dc;
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 4px 16px rgba(0, 77, 48, .07);
+}
+
+.card-label {
+  display: block;
+  color: #667d72;
+  margin-bottom: 12px;
+}
+
+.card strong {
+  font-size: 32px;
+  color: #006b3f;
+}
+
+.panel {
+  margin-bottom: 24px;
+}
+
+.panel h2 {
+  margin-top: 0;
+  color: #004d30;
+}
+
+.alinhamento-item {
+  border: 1px solid #d7e7dc;
+  border-radius: 10px;
+  padding: 18px;
+  margin-top: 16px;
+}
+
+.alinhamento-item h3 {
+  margin-top: 0;
+}
+
+.alinhamento-conteudo {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.6;
+  margin: 16px 0;
+}
+
+.alinhamento-meta {
+  font-size: 13px;
+  color: #667d72;
+}
+
+.alinhamento-acoes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.status-pendente {
+  color: #a45d00;
+  font-weight: 700;
+}
+
+.status-confirmado {
+  color: #006b3f;
+  font-weight: 700;
+}
+
+button {
+  background: #006b3f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 18px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #004d30;
+}
+
+button:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+form label {
+  font-weight: 600;
+}
+
+form input:not([type="checkbox"]),
+form textarea,
+form select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d7e7dc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font: inherit;
+}
+
+.alinhamento-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  margin-top: 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 13px;
+  text-align: left;
+  border-bottom: 1px solid #d7e7dc;
+}
+
+th {
+  background: #eef7f1;
+  color: #004d30;
+}
+
+#detalhesDestinatarios {
+  margin-top: 24px;
+}
+
+@media (max-width: 800px) {
+  .shell {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .content {
+    padding: 18px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .top {
+    flex-direction: column;
+  }
+}
+
+/* =========================================
+   HISTÓRICO DE VERSÕES
+   ========================================= */
+
+.acoes-relatorio {
+  min-width: 340px;
+}
+
+.acoes-relatorio button {
+  margin: 3px;
+  font-size: 13px;
+  padding: 9px 12px;
+}
+
+.botao-historico {
+  background: #e8f4ec;
+  color: #006b3f;
+  border: 1px solid #b7d9c3;
+}
+
+.botao-historico:hover {
+  background: #d2eadb;
+}
+
+.painel-historico {
+  margin-top: 24px;
+}
+
+.historico-cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.historico-cabecalho h2 {
+  margin: 0;
+}
+
+.historico-item {
+  background: #f8fbf9;
+  border: 1px solid #d7e7dc;
+  border-left: 4px solid #006b3f;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.historico-item h3 {
+  color: #004d30;
+  margin-top: 0;
+}
+
+.historico-item h4 {
+  color: #006b3f;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 800px) {
+  .acoes-relatorio {
+    min-width: 280px;
+  }
+
+  .historico-cabecalho {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* =========================================
+   EXPLORER HUB — FORMULÁRIO DE NOVA VERSÃO
+   ========================================= */
+
+.painel-nova-versao {
+  border: 1px solid #b7d9c3;
+  border-top: 4px solid #006b3f;
+  background: #ffffff;
+  margin-top: 24px;
+}
+
+.painel-nova-versao h2 {
+  color: #004d30;
+}
+
+.painel-nova-versao form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.painel-nova-versao textarea {
+  min-height: 180px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.painel-nova-versao input:focus,
+.painel-nova-versao textarea:focus,
+.painel-nova-versao select:focus {
+  outline: 2px solid #009b62;
+  outline-offset: 2px;
+}
+
+.formulario-versao-acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.botao-secundario {
+  background: #e8f4ec;
+  color: #006b3f;
+  border: 1px solid #b7d9c3;
+}
+
+.botao-secundario:hover {
+  background: #d2eadb;
+}
+
+#mensagemNovaVersao {
+  margin-top: 14px;
+  color: #006b3f;
+  font-weight: 600;
+}
+
+@media (max-width: 800px) {
+  .formulario-versao-acoes {
+    flex-direction: column;
+  }
+
+  .formulario-versao-acoes button {
+    width: 100%;
+  }
+}

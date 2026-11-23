@@ -1,0 +1,382 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>Alinhamentos | IPASGO Saúde</title>
+
+  <!-- ESTILOS GERAIS DO PORTAL -->
+  <link
+    rel="stylesheet"
+    href="/assets/css/style.css?v=9"
+  >
+
+  <!-- ESTILOS DO MÓDULO DE ALINHAMENTOS -->
+  <link
+    rel="stylesheet"
+    href="/assets/css/alinhamentos.css?v=3"
+  >
+</head>
+
+<body>
+
+  <div class="shell">
+
+    <!-- =====================================
+         MENU LATERAL
+         ===================================== -->
+
+    <aside class="sidebar">
+
+      <div class="sidebar-brand">
+
+        <img
+          src="/assets/img/logo-ipasgo.png"
+          alt="IPASGO Saúde"
+          class="sidebar-logo"
+        >
+
+        <span>PORTAL DE GESTÃO</span>
+
+      </div>
+
+      <nav aria-label="Menu principal">
+
+        <a href="/inicio">
+          ⌂ Início
+        </a>
+
+        <a
+          href="/alinhamentos"
+          class="active"
+        >
+          Alinhamentos
+        </a>
+
+        <a
+          href="/inicio#admin"
+          id="adminLink"
+          hidden
+        >
+          Administração
+        </a>
+
+      </nav>
+
+    </aside>
+
+    <!-- =====================================
+         CONTEÚDO PRINCIPAL
+         ===================================== -->
+
+    <main class="content">
+
+      <!-- CABEÇALHO -->
+
+      <header class="top">
+
+        <div>
+
+          <p class="eyebrow">
+            CENTRAL OPERACIONAL
+          </p>
+
+          <h1>
+            Gestão de Alinhamentos
+          </h1>
+
+          <p class="subtitle">
+            Comunicados e confirmações de leitura
+          </p>
+
+          <p
+            id="welcome"
+            class="muted"
+          >
+            Carregando...
+          </p>
+
+        </div>
+
+        <button
+          id="sair"
+          type="button"
+        >
+          Sair
+        </button>
+
+      </header>
+
+      <!-- =====================================
+           INDICADORES DE ALINHAMENTOS
+           ===================================== -->
+
+      <section class="cards">
+
+        <div class="card">
+
+          <span class="card-label">
+            Pendentes
+          </span>
+
+          <strong id="totalPendentes">
+            0
+          </strong>
+
+        </div>
+
+        <div class="card">
+
+          <span class="card-label">
+            Confirmados
+          </span>
+
+          <strong id="totalConfirmados">
+            0
+          </strong>
+
+        </div>
+
+        <div class="card">
+
+          <span class="card-label">
+            Total de alinhamentos
+          </span>
+
+          <strong id="totalAlinhamentos">
+            0
+          </strong>
+
+        </div>
+
+      </section>
+
+      <!-- =====================================
+           MEUS ALINHAMENTOS
+           ===================================== -->
+
+      <section class="panel">
+
+        <h2>
+          Meus alinhamentos
+        </h2>
+
+        <p class="muted">
+          Leia os comunicados e confirme sua ciência.
+        </p>
+
+        <div id="listaAlinhamentos">
+          Carregando alinhamentos...
+        </div>
+
+      </section>
+
+      <!-- =====================================
+           PUBLICAÇÃO DE ALINHAMENTOS
+           ===================================== -->
+
+      <section
+        class="panel"
+        id="painelAdmin"
+        hidden
+      >
+
+        <h2>
+          Publicar alinhamento
+        </h2>
+
+        <p class="muted">
+          Cadastre novos comunicados para os
+          colaboradores da operação.
+        </p>
+
+        <form id="formAlinhamento">
+
+          <label for="titulo">
+            Título
+          </label>
+
+          <input
+            id="titulo"
+            type="text"
+            required
+            minlength="3"
+            maxlength="200"
+          >
+
+          <label for="conteudo">
+            Conteúdo
+          </label>
+
+          <textarea
+            id="conteudo"
+            required
+            minlength="5"
+            rows="6"
+          ></textarea>
+
+          <label for="publico">
+            Destinatários
+          </label>
+
+          <select id="publico">
+
+            <option value="todos">
+              Todos os colaboradores
+            </option>
+
+            <option value="operador">
+              Operadores
+            </option>
+
+            <option value="supervisor">
+              Supervisores
+            </option>
+
+            <option value="administrador">
+              Administradores
+            </option>
+
+          </select>
+
+          <label class="alinhamento-check">
+
+            <input
+              type="checkbox"
+              id="obrigatorio"
+              checked
+            >
+
+            Leitura obrigatória
+
+          </label>
+
+          <button type="submit">
+            Publicar alinhamento
+          </button>
+
+        </form>
+
+        <p
+          id="mensagemPublicacao"
+          role="status"
+        ></p>
+
+      </section>
+
+      <!-- =====================================
+           ACOMPANHAMENTO DE LEITURAS
+           ===================================== -->
+
+      <section
+        class="panel"
+        id="painelRelatorio"
+        hidden
+      >
+
+        <h2>
+          Acompanhamento de leituras
+        </h2>
+
+        <p class="muted">
+          Consulte as confirmações, os destinatários
+          e o histórico dos alinhamentos publicados.
+        </p>
+
+        <div class="table-wrap">
+
+          <table>
+
+            <thead>
+
+              <tr>
+                <th>Alinhamento</th>
+                <th>Versão</th>
+                <th>Destinatários</th>
+                <th>Confirmados</th>
+                <th>Pendentes</th>
+                <th>Ações</th>
+              </tr>
+
+            </thead>
+
+            <tbody id="tabelaRelatorio">
+            </tbody>
+
+          </table>
+
+        </div>
+
+        <!-- DETALHAMENTO DE DESTINATÁRIOS -->
+
+        <div
+          id="detalhesDestinatarios"
+          hidden
+        >
+
+          <h3 id="tituloDestinatarios">
+            Destinatários
+          </h3>
+
+          <div class="table-wrap">
+
+            <table>
+
+              <thead>
+
+                <tr>
+                  <th>Nome</th>
+                  <th>Login</th>
+                  <th>Perfil</th>
+                  <th>Situação</th>
+                </tr>
+
+              </thead>
+
+              <tbody id="tabelaDestinatarios">
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- =====================================
+           HISTÓRICO DE VERSÕES
+
+           O JavaScript cria automaticamente
+           o painel quando o usuário clica
+           em "Ver histórico".
+           ===================================== -->
+
+      <!-- =====================================
+           FORMULÁRIO DE NOVA VERSÃO
+
+           O JavaScript cria automaticamente
+           o formulário quando o gestor clica
+           em "Nova versão".
+           ===================================== -->
+
+    </main>
+
+  </div>
+
+  <!-- =====================================
+       JAVASCRIPT DO MÓDULO
+       ===================================== -->
+
+  <script
+    src="/assets/js/alinhamentos.js?v=3"
+  ></script>
+
+</body>
+</html>

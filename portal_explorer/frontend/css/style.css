@@ -1,0 +1,551 @@
+
+/* ==========================================
+   PORTAL IPASGO SAÚDE
+   IDENTIDADE VISUAL COMPLETA
+========================================== */
+
+:root {
+  --primary: #006b3f;
+  --secondary: #009b62;
+  --dark: #004d30;
+  --background: #f4f8f5;
+  --text: #18392b;
+  --muted: #667d72;
+  --border: #d7e7dc;
+  --white: #ffffff;
+  --shadow: 0 4px 16px rgba(0, 77, 48, 0.07);
+}
+
+/* ==========================================
+   CONFIGURAÇÕES GERAIS
+========================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--text);
+  background: var(--background);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 9px;
+  padding: 12px 18px;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: var(--dark);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+input,
+select {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 11px 12px;
+  background: var(--white);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--secondary);
+  outline: 2px solid rgba(0, 155, 98, 0.18);
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+label {
+  display: block;
+  margin: 12px 0 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.error {
+  color: #b42318;
+  font-size: 13px;
+  min-height: 20px;
+}
+
+/* ==========================================
+   TELA DE LOGIN
+========================================== */
+
+.login-wrap {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  background: linear-gradient(
+    135deg,
+    #004d30 0%,
+    #006b3f 55%,
+    #009b62 100%
+  );
+}
+
+.login-card {
+  display: block;
+  width: 100%;
+  max-width: 440px;
+  padding: 38px;
+  margin: 0;
+  background: var(--white);
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0, 45, 25, 0.25);
+}
+
+.login-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 26px;
+}
+
+.login-logo {
+  display: block;
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.login-heading {
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.login-eyebrow {
+  display: inline-block;
+  color: var(--secondary);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.login-heading h1 {
+  color: var(--primary);
+  font-size: 28px;
+  margin: 12px 0 8px;
+  font-weight: 750;
+}
+
+.login-heading p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.login-fields label {
+  display: block;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  margin: 16px 0 7px;
+}
+
+.login-fields input {
+  display: block;
+  width: 100%;
+  height: 46px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--white);
+  color: var(--text);
+  font-size: 14px;
+}
+
+.login-fields input:focus {
+  border-color: var(--secondary);
+  outline: 2px solid rgba(0, 155, 98, 0.2);
+}
+
+.login-submit {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  margin-top: 26px;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 9px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.login-submit:hover {
+  background: var(--dark);
+}
+
+.login-card .error {
+  margin: 10px 0 0;
+}
+
+.login-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.login-footer strong {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.login-footer small {
+  font-size: 11px;
+  text-align: center;
+}
+
+/* ==========================================
+   ESTRUTURA DO PORTAL
+========================================== */
+
+.shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  background: var(--primary);
+  color: var(--white);
+  padding: 24px 16px;
+}
+
+.sidebar-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background: var(--white);
+  border-radius: 12px;
+  padding: 18px 12px;
+  margin-bottom: 28px;
+}
+
+.sidebar-logo {
+  display: block;
+  width: 100%;
+  max-width: 185px;
+  height: auto;
+  object-fit: contain;
+}
+
+.sidebar-brand span {
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.sidebar a {
+  display: block;
+  color: #e8fff1;
+  text-decoration: none;
+  padding: 13px 12px;
+  border-radius: 9px;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  background: var(--secondary);
+  color: var(--white);
+}
+
+/* ==========================================
+   CONTEÚDO PRINCIPAL
+========================================== */
+
+.content {
+  flex: 1;
+  min-width: 0;
+  padding: 32px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.top h1 {
+  color: var(--primary);
+  font-size: 30px;
+  margin: 4px 0 8px;
+}
+
+.eyebrow {
+  color: var(--secondary);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  margin: 0;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+
+.top .muted {
+  margin-top: 8px;
+}
+
+.top button {
+  flex-shrink: 0;
+}
+
+/* ==========================================
+   CARDS DE INDICADORES
+========================================== */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 28px 0 22px;
+}
+
+.card {
+  min-width: 0;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.card-label {
+  display: block;
+  font-size: 14px;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.card strong {
+  display: block;
+  font-size: 34px;
+  color: var(--primary);
+  line-height: 1.2;
+}
+
+/* ==========================================
+   PAINÉIS
+========================================== */
+
+.panel {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+}
+
+.panel h2 {
+  color: var(--dark);
+  font-size: 21px;
+  margin: 0 0 14px;
+}
+
+.panel p {
+  line-height: 1.6;
+}
+
+.section-heading {
+  margin-bottom: 20px;
+}
+
+.section-heading .muted {
+  margin: 0;
+}
+
+/* ==========================================
+   FORMULÁRIOS
+========================================== */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(180px, 1fr)
+  );
+  gap: 14px;
+  align-items: end;
+}
+
+.grid > div {
+  min-width: 0;
+}
+
+.grid button {
+  align-self: end;
+  min-height: 44px;
+}
+
+#senhaMsg,
+#userMsg {
+  font-size: 14px;
+}
+
+/* ==========================================
+   TABELAS
+========================================== */
+
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+th,
+td {
+  padding: 13px 12px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+th {
+  background: #edf7f0;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+tbody tr:hover {
+  background: #f8fbf9;
+}
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .content {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 700px) {
+  .shell {
+    display: block;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .sidebar nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .sidebar a {
+    font-size: 13px;
+  }
+
+  .content {
+    padding: 16px;
+  }
+
+  .top h1 {
+    font-size: 25px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .panel {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 26px 22px;
+  }
+
+  .login-heading h1 {
+    font-size: 25px;
+  }
+
+  .top {
+    flex-wrap: wrap;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
